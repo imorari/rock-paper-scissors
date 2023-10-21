@@ -23,15 +23,23 @@ function playRound(playerSelection, computerSelection) {
   function game() {
     let playerScore = 0;
     let computerScore = 0;
-
     while (playerScore < 5 && computerScore < 5) {
-        const playerSelection = prompt("Choose your fighter: ");
-        const computerSelection = getComputerChoice();
-
-        const result = playRound(playerSelection.toLowerCase(), computerSelection.toLowerCase());
+              const computerSelection = getComputerChoice();
+              let playerSelection;
+        while (true) { 
+            playerSelection = prompt("Choose your fighter: ").toLowerCase();           
+            if (playerSelection === "rock" || playerSelection === "scissors" || playerSelection === "paper") {   //condition for input validation
+                break;
+            } else {
+                alert("Your choices are \"paper\", \"rock\", or \"scissors\". Please try again.");
+            }
+        }
+        const result = playRound(playerSelection, computerSelection);                       //computer selection is already lower case so there is no need for toLowerCase function    
+        
 
         if (result === undefined) {
             // The round was skipped
+            console.log("It is a tie")                                              // added this note to know when there is a tie
             console.log("Current computer score is: " + computerScore )
             console.log("Current player score is: " + playerScore)
         } else if (result === true) {
@@ -50,7 +58,7 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Computer wins! with score "+ computerScore + " to " + playerScore);
     }
-}
 
+ }
 // Start game
-game();
+game()
