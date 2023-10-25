@@ -128,6 +128,13 @@ function eventHandle() {
 // remove the list items function
 
 function remove (){
+
+  const plScore = document.querySelector('.playerScoreCount');
+  const compScore = document.querySelector('.compScoreCount');
+  compScore.textContent="0"
+  plScore.textContent="0"
+
+
     const historyList= document.querySelector('ol')
     const removableItem = historyList.querySelectorAll('.removable')
     removableItem.forEach(item =>{
@@ -137,7 +144,7 @@ function remove (){
     const finalText = document.querySelector('.result')
     fightZoneDiv.removeChild(finalText)
 
-        
+
         
     }
 
@@ -165,10 +172,12 @@ restartButton.addEventListener('click', function() {
 
 
   const plScore = document.createElement('span');
+  plScore.classList.add('playerScoreCount')
   const yourScoreDiv = document.querySelector('.playerScore');
   yourScoreDiv.appendChild(plScore);
 
   const compScore = document.createElement('span');
+  compScore.classList.add('compScoreCount')
   const compScoreDiv = document.querySelector('.computerScore');
   compScoreDiv.appendChild(compScore);
 
