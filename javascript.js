@@ -95,8 +95,23 @@ function eventHandle() {
           }
     }
     else{
-        console.log("The game should stop here");
-
+      if (playerScore ===5){
+        const fightZoneDiv = document.querySelector('.fightZone')
+        const finalText = document.createElement('h1')
+        finalText.textContent="You won !!! "
+        finalText.classList.add('result')
+        fightZoneDiv.insertBefore(finalText, fightZoneDiv.firstChild)
+        //fightZoneDiv.appendChild(finalText)
+      }
+      else{
+        const fightZoneDiv = document.querySelector('.fightZone')
+        const finalText = document.createElement('h1')
+        finalText.classList.add('result')
+        finalText.textContent="Computer won !!! "
+        //fightZoneDiv.appendChild(finalText)
+        fightZoneDiv.insertBefore(finalText, fightZoneDiv.firstChild)
+        
+      }
       // Remove the event handler from all buttons I do not want them to listen if I am not in a game
       weaponButtons.forEach(button => {
         button.removeEventListener('click', eventHandle);
@@ -118,6 +133,10 @@ function remove (){
     removableItem.forEach(item =>{
        item.parentNode.removeChild(item);
     });
+    const fightZoneDiv = document.querySelector('.fightZone')
+    const finalText = document.querySelector('.result')
+    fightZoneDiv.removeChild(finalText)
+
         
         
     }
