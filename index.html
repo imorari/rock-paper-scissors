@@ -8,16 +8,46 @@
 <body>
   <h1>Rock Paper Scissors Game</h1>
   <div class="maincontainer">
-    
-    <div class="scoreRound">
-        <div>Score</div>
-        <div>round</div>
+
+              <div class="scoreRound">
+                  <div class="playerScore">Player Score : </div>
+                  <div class="computerScore">Computer Score : </div>
+              </div>
+
+          
+
+          <div class="secondcontainer">
+            <div class="fightZone"><ol></ol></div>
+            <div class="control">
+              <div>
+              <h2>Select Your Weapon</h2>
+              </div>
+              <div>
+            <ul>
+              <li>
+                <button class="button weapon" id="rock" value="rock"><img src="images/rock.png" alt="image of rock" ></button>
+              </li>
+              <li>
+                <button class="button weapon" value="paper" id="paper"><img src="images/paper.png" alt="image of rock" ></button>
+              </li>
+              <li>
+                <button class="button weapon" value="scissors" id="scissors"><img src="images/scissors.png" alt="image of rock" ></button>
+              </li>
+            </ul>
+            </div>
+                <div class="restartButton">
+                    <button id="restartButton">Restart</button>
+                </div>
+            </div>
+          </div>
     </div>
-
-
-    <div class="fightZone">fight Zone</div>
-    <div>Weapon Div</div>
-  </div>
+ <script src="javascript.js"></script>
 </body>
-<footer> Developed by <a href="https://github.com/imorari">imorari</a></footer>
+<footer> 
+  <p>Developed by</p>
+  <div class="link">
+  <img src="images/github.png" alt="github photo" id="githubphoto">
+  <a href="https://github.com/imorari">imorari</a>
+  </div>
+</footer>
 </html>
